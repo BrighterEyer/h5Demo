@@ -1,0 +1,96 @@
+
+/* 顶部菜单栏 */
+#myMenu {
+    width: 100%;
+    height: 60px;
+    margin: 8px;
+    background-color: rgba(0,0,0,0.2);
+    position: fixed;
+    left: -20px;
+    top: -10px;
+    z-index: 100;
+    font-size: 18px;
+}
+#myMenu li {
+    list-style: none;
+    float: left;
+    margin: 12px 6px;
+}
+#myMenu li a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 4px 6px;
+}
+#myMenu li:hover a{
+    background-color: #777;
+    color: #fff;
+}
+
+
+/* 内容部分section */
+#fullpage .section {
+    text-align: center;
+}
+#fullpage .section1 {
+    background-image: url('../img/1bg.jpg');
+    color: #424242;
+}
+#fullpage .section2 {
+    background-image: url('../img/2bg.jpg');
+    color: #eee;
+}
+#fullpage .section3 {
+    background-image: url('../img/3bg.jpg');
+    color: #eee;
+}
+#fullpage .section4 {
+    background-image: url('../img/4bg.jpg');
+    color: #424242;
+}
+#fullpage .section .title h2,
+#fullpage .section .title h3,
+#fullpage .section .title h4 {
+    text-align: center;
+    font-weight: 400;
+}
+#fullpage .section .title h2 {
+    margin: 30px auto;
+}
+#fullpage .section .title1 {
+    font-size: 40px;
+}
+#fullpage .section .title2 {
+    font-size: 30px;
+}
+#fullpage .section .title3 {
+    font-size: 24px;
+}
+#fullpage .section .link-box {
+    font-size: 24px;
+    width: 220px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 25px;
+    background-color: #5396FF;
+    line-height: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+#fp-nav ul li a span{
+    background-color: #fff;
+}
+.hr {
+    border: none;
+    height:1px;
+    width: 600px;
+    margin: 0 auto;
+    opacity: 0.4;
+}
+.hr1,.hr4 {
+    background-color: #000;
+}
+.hr2,.hr3 {
+    background-color: #fff;
+}
+
