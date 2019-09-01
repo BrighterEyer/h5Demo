@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=gbk" /> -->
+    <title>百度地图api</title>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=32ce28edca8ac5443b5d8d0a9ff91d00&v=1.1&services=true"></script>
+    <style type="text/css">
+    #getNewCityName {
+        width: 100px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="getNewCityName">定位</div>
+    <input id="showMapCityName" type="text" name="" value="珠海" />
+    <div style="width:800px;height:600px;border:1px solid gray" id="container"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+var map = new BMap.Map("container");
+var lc = new BMap.LocalCity(); //(Bmap.LocalCityOptions.renderOptions.map);
+
+
+map.enableScrollWheelZoom(); // 启用滚轮放大缩小，默认禁用
+var geocoder = new BMap.Geocoder(); //计算
+//"定位"按钮
+$("#getNewCityName").click(function() {
+    var cityName = $("#showMapCityName").val();
+    console.log("===== 城市名称 ======");
+    console.log(cityName);
+    if (cityName != "") {
+        map.centerAndZoom(cityName, 11); // 用城市名设置地图中心点
+    }
+});
+
+var showInfo = function(e) {
+
+    map.clearOverlays();
+    var marker = new BMap.Marker(e.point);
+    map.addOverlay(marker);
+    geocoder.getLocation(e.point, function(rs) {
+        console.log(rs);
+        var provincesOverAll = rs.addressComponents.province;
+        var cityOverAll = rs.addressComponents.city;
+        var countyOverAll = rs.addressComponents.district;
+        var detailsOverAll = rs.addressComponents.street;
+        longitudeOverAll = e.point.lng;
+        latitudeOverAll = e.point.lat;
+
+
+        console.log("省份", provincesOverAll);
+        console.log("城市", cityOverAll);
+        console.log("区", countyOverAll);
+        console.log("街道", detailsOverAll);
+        console.log("经度", longitudeOverAll);
+        console.log("纬度", latitudeOverAll);
+
+
+    });
+};
+
+map.addEventListener("click", showInfo);
+
+lc.get(function(lcr) {
+    if (lcr) {
+        map.centerAndZoom(lcr.center, 15);
+        // console.log(lcr.name);
+        console.log("当前城市", lcr);
+    } else {
+        console.log("没能获得正确地址");
+    }
+});
+
+// var native = new BMap.LocalCity();
+// native.get(function(r) {
+//     console.log("native", r);
+// });
+
+
+function showLngLat(map, data) {
+    var new_point = new BMap.Point(data.longitude, data.latitude)
+    var marker = new BMap.Marker(new_point)
+    map.addOverlay(marker);
+    map.centerAndZoom(new_point, 15);
+}
+</script>
+
+</html>
