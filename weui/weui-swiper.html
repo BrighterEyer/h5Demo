@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weui轮播图</title>
+
+    <style>
+        img{
+            width: 100%;
+        }
+    </style>
+
+<!-- head 中 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
+
+<!-- body 最后 -->
+<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+
+<!-- 如果使用了某些拓展插件还需要额外的JS -->
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/swiper.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/city-picker.min.js"></script>
+</head>
+<body>
+    <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565585438555&di=cc2522e797a17784ff1264eb256c565f&imgtype=0&src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F153%2F106897%2Fff034c6d4181f304_1366x768.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565585438555&di=cc2522e797a17784ff1264eb256c565f&imgtype=0&src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F153%2F106897%2Fff034c6d4181f304_1366x768.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565585438555&di=cc2522e797a17784ff1264eb256c565f&imgtype=0&src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F153%2F106897%2Fff034c6d4181f304_1366x768.jpg" alt=""></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script type="text/javascript">
+            var mySwiper = new Swiper('.swiper-container',
+                   {
+                          speed:1000,//播放速度
+                          autoHeight:true,
+                          loop:true,//是否循环播放
+                          setWrapperSize:true,
+                          autoplay: 
+                          {
+                            delay: 5000,
+                            disableOnInteraction: false,
+                          },
+                          pagination:  '.swiper-pagination',//分页
+                          effect : 'slide',//动画效果
+                     }
+                );
+        </script>
+</body>
+</html>
