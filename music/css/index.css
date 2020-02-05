@@ -1,0 +1,19 @@
+.play {
+    background-color: black;
+    border-radius: 5%;
+    font-size: 20px;
+    transition ：0.3;
+}
+
+body {
+    background-size: 120% 120%;
+}
+
+#music {
+    border: 12px solid;
+    border-radius: 7%;
+    background-color: #446;
+    margin: 0 auto;
+    width: 400px;
+    height: 600px;
+}
